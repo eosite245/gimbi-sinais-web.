@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIMBI SINAIS</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3126/3126586.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background: #388e3c;
+    }
+    nav a {
+      flex: 1 1 25%;
+      padding: 1em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+    }
+    nav a:hover {
+      background: #2e7d32;
+    }
+    section {
+      padding: 2em;
+    }
+    .tab-content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        flex: 1 1 50%;
+      }
+    }
+  </style>
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>GIMBI SINAIS</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showTab('sinais')">Sinais</a>
+    <a href="#" onclick="showTab('noticias')">Notícias</a>
+    <a href="#" onclick="showTab('acertos')">Acertos</a>
+    <a href="#" onclick="showTab('taxa')">Taxa de Acerto</a>
+  </nav>
+  <section id="sinais" class="tab-content active">
+    <h2>Sinais ao Vivo</h2>
+    <p>Exemplo: EUR/USD - CALL às 10:15 (M5)</p>
+    <!-- Você pode integrar sinais reais aqui via API ou JSON depois -->
+  </section>
+  <section id="noticias" class="tab-content">
+    <h2>Notícias de Impacto</h2>
+    <ul>
+      <li>📉 Payroll dos EUA às 9h00</li>
+      <li>📈 Decisão de Juros na Europa às 11h00</li>
+    </ul>
+  </section>
+  <section id="acertos" class="tab-content">
+    <h2>Histórico de Acertos</h2>
+    <ul>
+      <li>✔ EUR/USD - WIN</li>
+      <li>❌ GBP/JPY - LOSS</li>
+      <li>✔ AUD/CHF - WIN</li>
+    </ul>
+  </section>
+  <section id="taxa" class="tab-content">
+    <h2>Taxa de Acerto Geral</h2>
+    <p>83% de acertos nos últimos 7 dias</p>
+  </section>
+</body>
+</html>
